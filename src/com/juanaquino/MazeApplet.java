@@ -1,23 +1,13 @@
 package com.juanaquino;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import java.awt.event.*;
-import javax.swing.*;
+import java.applet.Applet;
 import java.awt.*;
-import java.util.Random;
-import java.util.Scanner;
-import java.io.*;
-import java.applet.*;
+import java.awt.event.*;
 
 public class MazeApplet extends Applet implements MouseListener, MouseMotionListener, Runnable
 {
     private MazeGenerator mazeGenerator;
     private String[][] mazeArray = new String[25][25];
-    private AudioClip background;
-    private AudioClip munch;
-    private AudioClip success;
-    private AudioClip intro;
 
     int xStart = 1;
     int yStart = 0;
@@ -50,12 +40,6 @@ public class MazeApplet extends Applet implements MouseListener, MouseMotionList
     public void init()
     {
         setSize(625,625);
-        intro = getAudioClip(getCodeBase(), "intro.wav");
-        success = getAudioClip(getCodeBase(), "success.wav");
-        munch = getAudioClip(getCodeBase(), "munch.wav");
-        background = getAudioClip(getCodeBase(),"background.wav");
-        intro.play();
-        background.loop();
 
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -100,13 +84,12 @@ public class MazeApplet extends Applet implements MouseListener, MouseMotionList
     public void run()
     {
         nextStep(xStart, yStart, 1);
-        success.play();
     }
 
     void nextStep(int x, int y, int level)
     {
         try{
-            munch.play(); // play sound, repaint, then mark current location as visited and see if reached target
+            // repaint, then mark current location as visited and see if reached target
             repaint();
             thread.sleep(delay);
             if(x == xEnd && y == yEnd)
