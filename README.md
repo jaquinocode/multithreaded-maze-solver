@@ -1,8 +1,6 @@
 # Multithreaded Maze Solver
 
-### Core Design Choices
-
-:octocat:
+### Core Design Choices:
 
 * Data-driven design allows for a neat separation between the visual elements and the maze AI while solving.
 * Multithreaded design creates the ability for the AI to continue solving despite changes to the maze during the solving procedure.
@@ -24,7 +22,7 @@ _The agent returning to start through fastest found solution._
 ---
 
 ![changing tiles](https://i.imgur.com/5XSRdPq.gif)
-<center><i>_Changing the maze in real-time w/ my mouse. This works for any maze, not just this unique example._
+_Changing the maze in real-time w/ my mouse. This works for any maze, not just this unique example._
 
 <br/>
 
