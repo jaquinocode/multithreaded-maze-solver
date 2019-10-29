@@ -8,7 +8,7 @@
 <br/>
 
 ![randomizing](https://i.imgur.com/9ueBAgf.gif)  
-_The agent being unbothered when randomizing the maze_
+_The agent being unbothered when randomizing the maze._
 
 <br/>
 
